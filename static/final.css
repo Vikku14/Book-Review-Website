@@ -1,0 +1,30 @@
+div.alert{
+	text-align: right;
+	}
+.final{
+    margin-left: 200px;
+}
+.card{
+	margin-top: 20px;
+	border-left: 5px solid green;
+}/*
+form{
+	width: 75%;
+}*/
+
+.isbn{
+	text-align: center;	
+}
+.title{
+	/*margin:auto;*/
+	text-align: left;
+}
+.author{
+	/*margin:auto;*/
+	text-align: left;
+}
+
+.year{
+	/*margin:auto;*/
+	text-align: left;
+}

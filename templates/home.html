@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>B00kDW</title>
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename= 'home.css') }}">
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+	<div class="text-justify lead col-9" >
+		<pre>
+
+		<h1>
+		B00kDataWare</h1>
+<h3>	Books Are Available In Abundence
+	Book's deep Details Are Provided
+	Any0ne Can Express Ther Thoughts
+	Fare Reviews To Million of Books
+	A Good User - Friendly Interface 
+	S0 0n..
+</h3>
+	</pre>
+
+	</div>
+	<div class="container">
+		<button class="btn border btn-lg border-secondary" onclick="window.location.href='{{ url_for('signup') }}'; ">SignUp</button>
+		<button  class="btn  btn-lg border border-secondary" onclick="window.location.href='{{ url_for('signin') }}'; " style="margin-left: 40px;">SignIn</button>
+	</div>
+
+</body>
+</html>

@@ -1,0 +1,28 @@
+body{
+background: linear-gradient(to right, #f7b733, #fc4a1a);
+}
+button{
+	font-variant: small-caps;
+	background-color: #f7ad36;
+  	color: white;
+ 	border: 1px solid #995c3d;
+  	border-radius: 12px;
+  	font-size: 24px;
+  	padding: 20px 26px;
+  	font-size: 25px;
+  	font-weight: bold;
+  	margin: 100px; 
+
+}
+.container{
+	display: line-block;
+	padding-right: 20px;*/
+	/*margin-left: 400px;*/
+	margin-left: 400px;
+	/*padding: 80px;*/
+	
+}
+pre{
+	font-size: 40px;
+	display: block;
+}
