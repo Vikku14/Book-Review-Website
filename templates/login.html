@@ -5,18 +5,18 @@
 {% endblock %}
 
 {% block body %}
-	<div class="card col-6 align-middle">
+	<div class="card col-4 align-middle">
 		<div class="card-title display-4">Login</div>
   <div class="card-body">
     <form action= "{{ url_for('logedup', hometype='LoginHome') }}" method="POST">
 	  <div class="form-group">
 	    <label for="exampleInputEmail1">User Name</label>
-	    <input type="text" class="form-control"  name="name" placeholder="Enter username">
+	    <input type="text" class="form-control"  name="name" placeholder="Enter username" required>
 	    <small id="emailHelp" class="form-text text-muted">We'll never share your credentials with anyone else.</small>
 	  </div>
 	  <div class="form-group">
 	    <label for="exampleInputPassword1">Password</label>
-	    <input type="password" class="form-control" name="pass" id="exampleInputPassword1" placeholder="Password">
+	    <input type="password" class="form-control" name="pass" id="exampleInputPassword1" placeholder="Password" required>
 	  </div>
 	  <button type="submit" class="btn btn-primary">Login</button>
 	<small class="text-muted"><a class="display-6 ml-2" href="{{ url_for('signup') }}">SignUp instead...</a></small>

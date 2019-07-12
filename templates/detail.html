@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+		<!-- js-bootstrap file -->
+
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+	<!-- Font Awesome Icon Library -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	<!-- css-bootstrap file -->
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename= 'detail.css')}}">
+
+	<title>B00kBW | B00kDetail</title>
+</head>
+<body>
+	<div class="headline text-center display-3 text-success">Book Details</div>
+	<div class="card shadow-sm p-2 mb-3 bg-white rounded col-8">
+		<div class="card-body text-justify">		
+	{% for book in book_result %}
+		
+			<div class="h4 lead"><span class=" text-primary">ISBN:</span> {{ book[0] }}</div><br>
+			<div class="h4 lead"><span class=" text-primary">Title:</span> {{ book[1] }}</div>
+
+			<div class="rated">
+					{% for i in range( x ) %}
+					<span class="fa fa-star checked"></span>					
+					{% endfor %}	
+
+					{% for i in range(x , 5) %}
+					<span class="fa fa-star"></span>					
+					{% endfor %}	
+				<div class="text-info text-center">{{ goodreads[1] }} Rating </div></div>
+
+			<br>
+			<div class="h4 lead"><span class="text-primary">Author:</span> {{ book[2] }}</div><br>
+			<div class="h4 lead"><span class=" text-primary">Year of Publication:</span> {{ book[3] }}</div><br>
+			
+				<div class="text-center">{{ goodreads[0] }} 
+				<span class=" lead text-muted"><small>people rated the book</small></span></div>			
+			{% endfor %}
+			</div>
+		</div>
+	
+
+
+	 <div class=" card shadow-sm p-2 mb-3 bg-white rounded col-8">
+		<div class="h3 text-center text-info card-title"><strong>Reviews</strong></div>
+
+	 	<div class="card-body col-12">
+	
+	 		<form class=" my-2 my-lg-0"  action="/Home/detail/{{ goodreads[2] }}" method="post">
+
+      			<input class="form-control form-inline col-10 mr-sm-2" type="text" placeholder="Tell us your views"  name = "comment" required> <br>
+      		<div class="radioButton">
+      		<fieldset class="rating">
+		    <input type="radio" id="star5" name="rating" value="5" /><label class = "full" for="star5" title="Awesome - 5 stars"></label>
+		    <input type="radio" id="star4" name="rating" value="4" /><label class = "full" for="star4" title="Pretty good - 4 stars"></label>
+		    <input type="radio" id="star3" name="rating" value="3" /><label class = "full" for="star3" title="Meh - 3 stars"></label>
+		    <input type="radio" id="star2" name="rating" value="2" /><label class = "full" for="star2" title="Kinda bad - 2 stars"></label>
+		    <input type="radio" id="star1" name="rating" value="1" /><label class = "full" for="star1" title="Sucks big time - 1 star"></label>
+				</fieldset>
+				</div>
+      			<button class="btn btn-outline-success  my-2 my-sm-0" type="submit">Post</button>      			
+    		</form>		
+		</div>   
+			{% for review in reviews %}
+			<div class="shadow-sm p-2 mb-3 bg-white rounded col-12">
+			<div class=" text-muted h5">{{ review[1] }}</div><hr>
+			<span class=" h6 text-dark">{{ review[2] }}</span>
+			<span style="float: right;">
+					{% if review[3] %}
+					{% for i in range( review[3] ) %}
+					<span class="fa fa-star checked"></span>					
+					{% endfor %}	
+
+					{% for i in range(review[3] , 5) %}
+					<span class="fa fa-star"></span>					
+					{% endfor %}	
+					{% endif %}
+
+			</span>
+
+		</div>
+		{% endfor %}
+	
+   	</div>
+
+	
+
+</body>
+</html>

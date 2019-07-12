@@ -18,7 +18,7 @@
 	<title>B00kDW | Home</title>
 </head>
 <body>
-	<div class="alert alert-secondary" role="alert">
+	<div class=" head shadow-sm p-2 mb-3 bg-white rounded" role="alert">
 		<div class="btn-group">
 		  <button type="button" class="btn btn-outline-secondary">Welcome, {{result}}</button>
 		  <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -29,24 +29,47 @@
 		  </div>
 		</div>
 	</div>
+	<span>
+		<center><a href="{{ url_for('allbooks') }}">get all books</a> 
+			<span class="text-muted">OR</span>
+		</center> 
+	</span>
 
 	<div class="final"> 
-	  	<form class=" form-inline my-2 my-lg-0">
-      		<input class="form-control col-9 mr-sm-2" type="search" placeholder="Search by ISBN | Author | Title | Year" aria-label="Search">
+	  	<form class=" form-inline my-2 my-lg-0" action="{{ url_for('find') }}" method="post">
+      		<input class="form-control col-8 mr-sm-2" type="search" placeholder="Search by ISBN | Author | Title" aria-label="Search" name = "search">
       		<button class="btn btn-outline-success  my-2 my-sm-0" type="submit">Search</button>
     	</form>
+    	
+    	<span class="text-info ml-2">{{ res}} </span>
+    	
     	{% for d in data %}
-  	  	<div class="card col-9 ">
-  			<div class="card-body ">
-  		  		<div class=" isbn text-muted"><h4><code>ISBN: </code>{{ d[0] }}</h4></div>
-  		  		<div class="col-12">
-  		  		<span class="font-weight-bold"> {{ d[1] }}</span>
-  		  		<span class="text-muted text-right">--- {{ d[2] }} ( {{ d[3]}} )</span>
+  	  	
+  	  		<div class="card col-9 shadow-sm p-1 mb-2 bg-white rounded">
+	  			<div class="card-body">
+	  		  		<div class="text-muted">
+	  		  			<center>
+	  		  				<h4>
+	  		  					<a  class="text-muted" href="/Home/detail/{{ d[0] }}">{{ d[1] }}</a>
+	  		  				</h4>
+	  		  			</center>
+	  		  		</div>
+	  		  		<div class="col-12">
+	  		  			<!-- <span class="text-muted"> <code>ISBN: </code>{{ d[0] }}</span> -->
+	  		  			<span class="year text-right text-muted">--- {{ d[2] }} 
 
-  		  		</div>
+	  		  			</span>
+	  		  		</div>
 
-  			</div>
-		</div>
+	  			</div>
+			</div>
+		
+
+		
+		{% else %}
+			<div class="alert alert-danger shadow-sm p-3 mt-2 mb-5 bg-red rounded col-9" role="alert">
+				<center>Sorry, "{{ res[15:-3] }}" is not available.</center>
+			</div>
 		{% endfor %}
 	</div>
 
