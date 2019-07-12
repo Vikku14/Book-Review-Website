@@ -55,6 +55,8 @@ def logedup(hometype):
 				"password":password}).rowcount == 0:
 				return render_template("login.html",message="User/Password Doesn't exist.")
 			else:
+				db.execute("update users set active=True where loger=:name",{'name':name})
+				db.commit()
 				data = finalPage()
 				return render_template("final.html",result=session["user"], data = data,res = "latest books")
 
@@ -140,3 +142,11 @@ def getisbn(isbn):
 		return render_template("jsonfile.html",data=tab )
 	except:
 		return render_template("error.html")
+
+@app.route("/logout")
+def logout():
+	name=session['user']
+	print(name)
+	db.execute("update users set active=False where loger=:name",{'name':name})
+	db.commit()
+	return render_template('home.html')

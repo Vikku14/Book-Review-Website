@@ -1,7 +1,7 @@
 body{
 background: linear-gradient(to right, #f7b733, #fc4a1a);
 }
-button{
+/*button{
 	font-variant: small-caps;
 	background-color: #f7ad36;
   	color: white;
@@ -13,7 +13,7 @@ button{
   	font-weight: bold;
   	margin: 100px; 
 
-}
+}*/
 .container{
 	display: line-block;
 	padding-right: 20px;*/
