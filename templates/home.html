@@ -7,6 +7,7 @@
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body>
+	<div style="margin-bottom: 86px;">
 	<img src="{{ url_for('static', filename= 'source.gif') }}" 
 	style="float: right; width: 300px;margin-top: 80px; margin-right: 120px;">
 	<div class="text-justify lead col-9" >
@@ -29,6 +30,16 @@
 		<button  class="btn  btn-lg border border-light" onclick="window.location.href='{{ url_for('signin') }}'; " style="margin-left: 40px;">SignIn
 		</button>
 	</div>
+</div>
+    <footer class="lead h6 bg-light text-dark">
 
+  <!-- Copyright -->
+  <div class="footer-copyright text-center py-3" style="padding-left: 200px;">
+  	<small><strong> © 2019 Copyright:</strong>
+  	 This gif is taken from <a href="https://google.com/" target="_blank"> google</a>
+	</small></div>
+  <!-- Copyright -->
+
+</footer>
 </body>
 </html>
