@@ -1,8 +1,19 @@
 # Project 1
 
 Web Programming with Python and JavaScript.
-A Book website to get details, post reviews & give rating about 5000 books.
-
+A Book website (Named: BookDataWare) to get details, post reviews & give rating about 5000 books.
+#### Website includes
+* login | logout feature
+* 5000 books database
+* Search feature by Book title | author | ISBN
+* Book details include
+  * Book Title
+  * Author name
+  * ISBN
+  * Year of publication
+  * Average rating
+  * Number of people review
+* User can review and rate the book on this website
 ## Getting Started
 
 set environment variables (for linux)
