@@ -50,13 +50,13 @@
 	  		  		<div class="text-muted">
 	  		  			<center>
 	  		  				<h4>
-	  		  					<a  class="text-muted" href="/Home/detail/{{ d[0] }}">{{ d[1] }}</a>
+	  		  					<a  class="text-muted" href="{{ url_for('detail', isbn= d[0]) }}">{{ d.title }}</a>
 	  		  				</h4>
 	  		  			</center>
 	  		  		</div>
 	  		  		<div class="col-12">
 	  		  			<!-- <span class="text-muted"> <code>ISBN: </code>{{ d[0] }}</span> -->
-	  		  			<span class="year text-right text-muted">--- {{ d[2] }} 
+	  		  			<span class="year text-right text-muted">--- {{ d.author }} 
 
 	  		  			</span>
 	  		  		</div>
